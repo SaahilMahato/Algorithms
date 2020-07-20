@@ -3,40 +3,40 @@ public class QuickUnion {
     private int[] sz;
 
     public QuickUnion(int N) {
-        id = new int[N];
+        this.id = new int[N];
         for(int p=0; p<N; p++) {
-            id[p] = p;
+            this.id[p] = p;
         }
 
-        sz = new int[N];
+        this.sz = new int[N];
         for(int i=0; i<N; i++) {
-            sz[i] = 0;
+            this.sz[i] = 0;
         }
     }
 
     private int root(int p) {
-        while(p != id[p]) {
-            id[p] = id[id[p]];
-            p = id[p];
+        while(p != this.id[p]) {
+            this.id[p] = this.id[this.id[p]];
+            p = this.id[p];
         }
         return p;
     }
 
     public boolean connected(int p, int q) {
-        return root(p) == root(q);
+        return this.root(p) == this.root(q);
     }
 
     public void union(int p, int q) {
-        int i = root(p);
-        int j = root(q);
+        int i = this.root(p);
+        int j = this.root(q);
         if (i == j) return;
-        if (sz[i] < sz[j]) {
-            id[i] = j;
-            sz[j] += sz[i];
+        if (this.sz[i] < this.sz[j]) {
+            this.id[i] = j;
+            this.sz[j] += this.sz[i];
         }
         else {
-            id[j] = i;
-            sz[i] += sz[j];
+            this.id[j] = i;
+            this.sz[i] += this.sz[j];
         }
     }
 }
