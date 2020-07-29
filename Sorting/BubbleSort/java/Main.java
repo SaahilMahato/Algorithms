@@ -3,6 +3,7 @@ public class Main {
         BubbleSort s = new BubbleSort(10);
         s.input();
         s.printArray();
+        System.out.println("Sorting...");
         s.sort();
         s.printArray();
     }

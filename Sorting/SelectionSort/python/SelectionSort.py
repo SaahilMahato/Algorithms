@@ -20,5 +20,6 @@ if __name__ == '__main__':
     s = SelectionSort()
     s.input()
     s.print_array()
+    print('Sorting...')
     s.sort()
     s.print_array()

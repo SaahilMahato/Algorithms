@@ -22,5 +22,6 @@ if __name__ == '__main__':
     s = InsertionSort()
     s.input()
     s.print_array()
+    print("Sorting...")
     s.sort()
     s.print_array()
