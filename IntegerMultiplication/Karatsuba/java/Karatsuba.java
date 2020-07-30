@@ -1,5 +1,4 @@
 import java.lang.Math;
-import java.lang.Math;
 
 class Karatsuba {
     public long multiply(long x, long y) {
