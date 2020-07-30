@@ -1,3 +1,5 @@
+// This implementation doesn't work for negative numbers
+
 #include <iostream>
 #include <string>
 #include <math.h>

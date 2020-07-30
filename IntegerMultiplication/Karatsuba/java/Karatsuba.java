@@ -1,3 +1,5 @@
+// This implementation doesn't work for negative numbers
+
 import java.lang.Math;
 
 class Karatsuba {
