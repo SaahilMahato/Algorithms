@@ -2,7 +2,10 @@
 
 int main()
 {
-    InsertionSort s = InsertionSort(10);
+    std::cout<<"Enter the size of array: ";
+    int N;
+    std::cin>>N;
+    InsertionSort s = InsertionSort(N);
     s.input();
     s.printArray();
     std::cout<<"Sorting..."<<std::endl;

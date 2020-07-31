@@ -6,7 +6,7 @@ class BubbleSort:
         self.arr = list(map(int, input('Enter the array: ').split()))
 
     def sort(self):
-        for i in range(1, len(self.arr)-1):
+        for i in range(1, len(self.arr)):
             flag = True
             for j in range(0, len(self.arr)-i):
                 if self.arr[j] > self.arr[j+1]:

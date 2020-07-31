@@ -2,7 +2,10 @@
 
 int main()
 {
-    SelectionSort s = SelectionSort(10);
+    int N;
+    std::cout<<"Enter the size of the array: ";
+    std::cin>>N; 
+    SelectionSort s = SelectionSort(N);
     s.input();
     s.printArray();
     std::cout<<"Sorting..."<<std::endl;

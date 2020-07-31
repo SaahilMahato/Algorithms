@@ -14,7 +14,7 @@ class SelectionSort
 
         void input()
         {
-            std::cout<<"Enter the array: ";
+            std::cout<<"Enter the array: "<<std::endl;
             for(int i=0; i<this->size; i++)
                 std::cin >> this->arr[i];
         }

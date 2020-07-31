@@ -2,7 +2,10 @@
 
 int main()
 {
-    BubbleSort s = BubbleSort(10);
+    std::cout<<"Enter the size of the array: ";
+    int N;
+    std::cin>>N;
+    BubbleSort s = BubbleSort(N);
     s.input();
     s.printArray();
     std::cout<<"Sorting..."<<std::endl;

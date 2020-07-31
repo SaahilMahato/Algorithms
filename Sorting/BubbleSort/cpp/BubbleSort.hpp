@@ -22,14 +22,16 @@ class BubbleSort
 
         void sort()
         {
-            for(int i=1; i<this->size-1; i++)
+            bool flag;
+            int temp;
+            for(int i=1; i<this->size; i++)
             {
-                bool flag = true;
+                flag = true;
                 for(int j=0; j<this->size-i; j++)
                 {
                     if(this->arr[j] > this->arr[j+1])
                     {
-                        int temp = this->arr[j];
+                        temp = this->arr[j];
                         this->arr[j] = this->arr[j+1];
                         this->arr[j+1] = temp;
                         flag = false;

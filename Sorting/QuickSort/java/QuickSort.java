@@ -21,15 +21,16 @@ public class QuickSort {
     {
         int pivot = this.arr[end];
         int p_index = start;
+        int temp;
         for(int i=start; i<end; i++) {
             if(this.arr[i] <= pivot) {
-                int temp = this.arr[i];
+                temp = this.arr[i];
                 this.arr[i] = this.arr[p_index];
                 this.arr[p_index] = temp;
                 p_index++;
             }
         }
-        int temp = this.arr[p_index];
+        temp = this.arr[p_index];
         this.arr[p_index] = this.arr[end];
         this.arr[end] = temp;
         return p_index;

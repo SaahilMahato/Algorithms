@@ -1,7 +1,13 @@
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
-        QuickSort s = new QuickSort(10);
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the size of the array: ");
+        int N = sc.nextInt();
+        QuickSort s = new QuickSort(N);
         s.input();
+        sc.close();
         s.printArray();
         System.out.println("Sorting...");
         s.sort();

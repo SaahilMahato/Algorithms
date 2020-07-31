@@ -19,9 +19,10 @@ public class InsertionSort {
     }
 
     public void sort() {
+        int temp, empty_index;
         for(int i=1; i<this.size; i++) {
-            int temp = this.arr[i];
-            int empty_index = i;
+            temp = this.arr[i];
+            empty_index = i;
             while(empty_index > 0 && this.arr[empty_index-1] > temp) {
                 this.arr[empty_index] = this.arr[empty_index-1];
                 empty_index --;

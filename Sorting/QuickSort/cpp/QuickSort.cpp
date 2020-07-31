@@ -2,7 +2,10 @@
 
 int main()
 {
-    QuickSort s = QuickSort(10);
+    std::cout<<"Enter the size of the array: ";
+    int N;
+    std::cin>>N;
+    QuickSort s = QuickSort(N);
     s.input();
     s.printArray();
     std::cout<< "Sorting..."<< std::endl;

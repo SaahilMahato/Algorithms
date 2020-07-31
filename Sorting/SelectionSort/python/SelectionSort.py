@@ -6,8 +6,6 @@ class SelectionSort:
         self.arr = list(map(int,input('Enter the array: ').split()))
 
     def sort(self):
-        min_index = 0
-        temp = 0
         for i in range(0, len(self.arr)-1):
             min_index = i
             for j in range(i+1, len(self.arr)):
