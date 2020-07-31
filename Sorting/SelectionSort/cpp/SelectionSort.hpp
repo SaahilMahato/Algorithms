@@ -21,17 +21,16 @@ class SelectionSort
 
         void sort()
         {
-            for(int i=0; i<this->size; i++)
+            int min_index, temp;
+            for(int i=0; i<this->size-1; i++)
             {
+                min_index = i;
                 for(int j=i+1; j<this->size; j++)
-                {
-                    if(this->arr[j]<this->arr[i])
-                    {
-                        int temp = this->arr[i];
-                        this->arr[i] = this->arr[j];
-                        this->arr[j] = temp;
-                    }
-                }
+                    if(this->arr[j]<this->arr[min_index])
+                        min_index = j;
+                temp = this->arr[i];
+                this->arr[i] = this->arr[min_index];
+                this->arr[min_index] = temp;
             }
         }
 

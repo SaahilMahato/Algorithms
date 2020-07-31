@@ -6,12 +6,16 @@ class SelectionSort:
         self.arr = list(map(int,input('Enter the array: ').split()))
 
     def sort(self):
-        for i in range(0, len(self.arr)):
+        min_index = 0
+        temp = 0
+        for i in range(0, len(self.arr)-1):
+            min_index = i
             for j in range(i+1, len(self.arr)):
-                if self.arr[j]<self.arr[i]:
-                    temp = self.arr[i]
-                    self.arr[i] = self.arr[j]
-                    self.arr[j] = temp
+                if self.arr[j]<self.arr[min_index]:
+                    min_index = j
+            temp = self.arr[i]
+            self.arr[i] = self.arr[min_index]
+            self.arr[min_index] = temp
 
     def print_array(self):
         print("Array is: " + " ".join([str(i) for i in self.arr]))
