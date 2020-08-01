@@ -11,7 +11,7 @@ Implementations of Algorithms and Data Structures in C++, Java and Python.
 ## Graph Algorithms:
 1. Quick Union
 
-## Integer Multplication Algorithms:
+## Integer Multiplication Algorithms:
 1. Karatsuba Multiplication
 
 ## Counting Inversions:
