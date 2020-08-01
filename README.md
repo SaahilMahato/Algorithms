@@ -14,5 +14,5 @@ Implementations of Algorithms and Data Structures in C++, Java and Python.
 ## Integer Multplication Algorithms:
 1. Karatsuba Multiplication
 
-## Counting Inversiosn:
+## Counting Inversions:
 1. Brute Force Algorithm
