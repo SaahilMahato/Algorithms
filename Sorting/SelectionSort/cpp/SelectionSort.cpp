@@ -2,15 +2,16 @@
 
 int main()
 {
-    int N;
     std::cout<<"Enter the size of the array: ";
-    std::cin>>N; 
-    SelectionSort s = SelectionSort(N);
-    s.input();
-    s.printArray();
-    std::cout<<"Sorting..."<<std::endl;
-    s.sort();
-    s.printArray();
-
+    int size;
+    std::cin >> size; 
+    int* arr = new int[size];
+    input(arr, size);
+    printArray(arr, size);
+    std::cout << "Sorting..." << std::endl;
+    selectionSort(arr, size);
+    printArray(arr, size);
+    delete[] arr;
+    
     return 0;
 }

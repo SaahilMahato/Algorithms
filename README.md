@@ -8,11 +8,11 @@ Implementations of Algorithms and Data Structures in C++, Java and Python.
 4. Merge Sort
 5. Quick Sort
 
-## Graph Algorithms:
-1. Quick Union
-
 ## Integer Multiplication Algorithms:
 1. Karatsuba Multiplication
 
 ## Counting Inversions:
-1. Brute Force Algorithm
+1. Brute Force
+
+## Matrix Multiplication Algorithms:
+1. Straight Forward Matrix Multiplication

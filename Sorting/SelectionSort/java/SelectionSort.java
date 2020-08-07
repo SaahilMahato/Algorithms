@@ -1,39 +1,32 @@
 import java.util.Scanner;
 
 public class SelectionSort {
-    private int[] arr;
-    private int size;
 
-    public SelectionSort(int N) {
-        this.size = N;
-        this.arr = new int[this.size];
-    }
-
-    public void input() {
+    public static void input(int[] arr, int size) {
         System.out.println("Enter the array:");
-        Scanner sc = new Scanner(System.in);
-        for(int i=0; i<this.size; i++)
-            this.arr[i] = sc.nextInt();
-        sc.close();
+        Scanner in = new Scanner(System.in);
+        for(int i=0; i<size; i++)
+            arr[i] = in.nextInt();
+        in.close();
     }
 
-    public void sort() {
+    public static void selectionSort(int[] arr, int size) {
         int min_index, temp;
-        for(int i=0; i<this.size-1; i++) {
+        for(int i=0; i<size-1; i++) {
             min_index = i;
-            for(int j=i+1; j<this.size; j++)
-                if(this.arr[j]<this.arr[min_index])
+            for(int j=i+1; j<size; j++)
+                if(arr[j]<arr[min_index])
                     min_index = j;
-            temp = this.arr[i];
-            this.arr[i] = this.arr[min_index];
-            this.arr[min_index] = temp;
+            temp = arr[i];
+            arr[i] = arr[min_index];
+            arr[min_index] = temp;
         }
     }
 
-    public void printArray() {
+    public static void printArray(int[] arr, int size) {
         System.out.print("Array is: ");
-        for(int i=0; i<this.size; i++) 
-            System.out.print(this.arr[i]+" ");
+        for(int i=0; i<size; i++) 
+            System.out.print(arr[i] + " ");
         System.out.println();
     }
 }

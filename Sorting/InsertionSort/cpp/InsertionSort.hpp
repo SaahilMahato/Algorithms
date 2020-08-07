@@ -1,48 +1,27 @@
 #include <iostream>
 
-class InsertionSort
-{
-    private:
-        int *arr;
-        int size;
+void input(int* arr, int size) {
+    std::cout << "Enter the array: "<< std::endl;
+    for(int i=0; i<size; i++)
+        std::cin >> arr[i];
+}
 
-    public:
-        InsertionSort(int N)
-        {
-            this->size = N;
-            this->arr = new int[this->size];
+void insertionSort(int* arr, int size) {
+    int temp, empty_index;
+    for(int i=1; i<size; i++) {
+        temp = arr[i];
+        empty_index = i;
+        while(empty_index > 0 && arr[empty_index - 1] > temp) {
+            arr[empty_index] = arr[empty_index-1];
+            empty_index--;
         }
+        arr[empty_index] = temp;
+    }
+}
 
-        void input()
-        {
-            std::cout<< "Enter the array: "<< std::endl;
-            for(int i=0; i<this->size; i++)
-                std::cin >> this->arr[i];
-        }
-
-        void sort()
-        {
-            int temp, empty_index;
-            for(int i=1; i<this->size; i++)
-            {
-                temp = this->arr[i];
-                empty_index = i;
-                while(empty_index > 0 && this->arr[empty_index - 1] > temp)
-                {
-                    this->arr[empty_index] = this->arr[empty_index-1];
-                    empty_index--;
-                }
-                this->arr[empty_index] = temp;
-            }
-        }
-
-        void printArray()
-        {
-            std::cout<< "Array is: ";
-            for(int i=0; i<this->size; i++)
-            {
-                std::cout << this->arr[i]<< " ";
-            }
-            std::cout << std::endl;
-        } 
-};
+void printArray(int* arr, int size) {
+    std::cout << "Array is: ";
+    for(int i=0; i<size; i++)
+        std::cout << arr[i] << " ";
+    std::cout << std::endl;
+}

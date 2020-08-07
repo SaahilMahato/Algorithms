@@ -8,7 +8,6 @@ public class Main {
         System.out.print("Enter y: ");
         long y = sc.nextLong();
         sc.close();
-        Karatsuba k = new Karatsuba();
-        System.out.println(k.multiply(x, y));
+        System.out.println(Karatsuba.multiply(x, y));
     }
 }

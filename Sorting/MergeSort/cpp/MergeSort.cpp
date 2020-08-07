@@ -3,12 +3,15 @@
 int main()
 {
     std::cout<<"Enter the size of the array: ";
-    int N;
-    std::cin>>N;
-    MergeSort s = MergeSort(N);
-    s.input();
-    s.printArray();
-    std::cout<<"Sorting..."<<std::endl;
-    s.sort();
-    s.printArray();
+    int size;
+    std::cin >> size;
+    int* arr = new int[size];
+    input(arr, size);
+    printArray(arr, size);
+    std::cout << "Sorting..." << std::endl;
+    mergeSort(arr, 0, size-1);
+    printArray(arr, size);
+    delete[] arr;
+
+    return 0;
 }

@@ -1,66 +1,40 @@
 #include <iostream>
 
-class QuickSort
-{
-    private:
-        int *arr;
-        int size;
+void input(int* arr, int size) {
+    std::cout << "Enter the array: " << std::endl;
+    for(int i=0; i<size; i++)
+        std::cin >> arr[i];
+}
 
-    public:
-        QuickSort(int N)
-        {
-            this->size = N;
-            this->arr = new int[this->size];
+int partition(int* arr, int start, int end) {
+    int pivot = arr[end];
+    int p_index = start;
+    int temp;
+    for(int i=start; i<end; i++) {
+        if(arr[i] <= pivot) {
+            temp = arr[i];
+            arr[i] = arr[p_index];
+            arr[p_index] = temp;
+            p_index++;
         }
+    }
+    temp = arr[p_index];
+    arr[p_index] = arr[end];
+    arr[end] = temp;
+    return p_index;
+}
 
-        void input()
-        {
-            std::cout<< "Enter the array: "<< std::endl;
-            for(int i=0; i<this->size; i++)
-                std::cin>> this->arr[i];
-        }
+void quickSort(int* arr, int start, int end) {
+    if(start < end) {
+        int p_index = partition(arr, start, end);
+        quickSort(arr, start, p_index-1);
+        quickSort(arr, p_index+1, end);
+    }
+}
 
-        int partition(int start, int end)
-        {
-            int pivot = this->arr[end];
-            int p_index = start;
-            int temp;
-            for(int i=start; i<end; i++)
-            {
-                if(this->arr[i] <= pivot)
-                {
-                    temp = this->arr[i];
-                    this->arr[i] = this->arr[p_index];
-                    this->arr[p_index] = temp;
-                    p_index++;
-                }
-            }
-            temp = this->arr[p_index];
-            this->arr[p_index] = this->arr[end];
-            this->arr[end] = temp;
-            return p_index;
-        }
-
-        void quickSort(int start, int end)
-        {
-            if(start < end)
-            {
-                int p_index = partition(start, end);
-                quickSort(start, p_index-1);
-                quickSort(p_index+1, end);
-            }
-        }
-
-        void sort()
-        {
-            quickSort(0, this->size-1);
-        }
-
-        void printArray()
-        {
-            std::cout<< "The array is: ";
-            for(int i=0; i<this->size; i++)
-                std::cout<< this->arr[i]<< " ";
-            std::cout<< std::endl; 
-        }
-};
+void printArray(int* arr, int size) {
+    std::cout << "The array is: ";
+    for(int i=0; i<size; i++)
+        std::cout << arr[i] << " ";
+    std::cout << std::endl; 
+}

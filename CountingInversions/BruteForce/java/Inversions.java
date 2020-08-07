@@ -1,35 +1,27 @@
 import java.util.Scanner;
 
-public class Inversions {
-    private int[] arr;
-    private int size;
-
-    public Inversions(int N) {
-        this.size = N;
-        this.arr = new int[this.size];
-    }
-
-    public void input() {
+class Inversions {
+    public static void input(int arr[], int size) {
         System.out.println("Enter the array: ");
-        Scanner sc = new Scanner(System.in);
-        for(int i=0; i<this.size; i++)
-            this.arr[i] = sc.nextInt();
-        sc.close();
+        Scanner in = new Scanner(System.in);
+        for(int i=0; i<size; i++)
+            arr[i] = in.nextInt();
+        in.close();
     }
 
-    public int count() {
+    public static int count(int[] arr, int size) {
         int  count = 0;
-        for(int i=0; i<this.size; i++)
-            for(int j=i+1; j<this.size; j++)
-                if(this.arr[i] > this.arr[j])
+        for(int i=0; i<size; i++)
+            for(int j=i+1; j<size; j++)
+                if(arr[i] > arr[j])
                     count++;
         return count;
     }
 
-    public void printArray() {
+    public static void printArray(int[] arr, int size) {
         System.out.print("The array is: ");
-        for(int i=0; i<this.size; i++)
-            System.out.print(this.arr[i] + " ");
+        for(int i=0; i<size; i++)
+            System.out.print(arr[i] + " ");
         System.out.println();
     }
 }

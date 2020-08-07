@@ -1,84 +1,55 @@
 #include <iostream>
 
-class MergeSort
-{
-    private:
-        int *arr;
-        int size;
+void input(int* arr, int size) {
+    std::cout << "Enter the array: " << std::endl;
+    for(int i=0; i<size; i++)
+        std::cin >> arr[i];
+}
 
-    public:
-        MergeSort(int N)
-        {
-            this->size = N;
-            this->arr = new int[this->size];
+void merge(int* arr, int start, int mid, int end) {   
+    int temp[end - start + 1];
+    int i = start, j = mid + 1, k = 0;
+
+    while(i <= mid && j <= end) {
+        if(arr[i] <= arr[j]) {
+            temp[k] = arr[i];
+            i++;
         }
-
-        void input()
-        {
-            std::cout<<"Enter the array: "<<std::endl;
-            for(int i=0; i<this->size; i++)
-                std::cin>>this->arr[i];
+        else {
+            temp[k] = arr[j];
+            j++;
         }
+        k++;
+    }
 
-        void merge(int l, int m, int h)
-        {   
-            int temp[h - l + 1];
-            int i = l, j = m + 1, k = 0;
+    while(i <= mid) {
+        temp[k] = arr[i];
+        i++;
+        k++;
+    }
 
-            while(i <= m && j <= h)
-            {
-                if(this->arr[i] <= this->arr[j])
-                {
-                    temp[k] = this->arr[i];
-                    i++;
-                }
-                else
-                {
-                    temp[k] = this->arr[j];
-                    j++;
-                }
-                k++;
-            }
+    while(j <= end) {
+        temp[k] = arr[j];
+        j++;
+        k++;
+    }
 
-            while(i <= m)
-            {
-                temp[k] = this->arr[i];
-                i++;
-                k++;
-            }
+    for(int i=start; i<=end; i++)
+        arr[i] = temp[i-start];
+}
 
-            while(j <= h)
-            {
-                temp[k] = this->arr[j];
-                j++;
-                k++;
-            }
+void mergeSort(int* arr, int start, int end) {
+    if(start < end) {
+        int mid = (start + end) / 2;
+        mergeSort(arr, start, mid);
+        mergeSort(arr, mid + 1, end);
+        merge(arr, start, mid, end);
+    }
+}
 
-            for(int i=l; i <= h; i++)
-                this->arr[i] = temp[i-l];
-        }
-
-        void mergeSort(int l, int h)
-        {
-            if(l < h)
-            {
-                int m = (l+h)/2;
-                mergeSort(l, m);
-                mergeSort(m + 1, h);
-                merge(l, m, h);
-            }
-        }
-
-        void sort()
-        {
-            mergeSort(0, this->size-1);
-        }
-
-        void printArray()
-        {
-            std::cout<<"Array is: ";
-            for(int i=0; i<this->size; i++)
-                std::cout<<this->arr[i]<<" ";
-            std::cout<<std::endl;
-        }
-};
+void printArray(int* arr, int size) {
+    std::cout << "Array is: ";
+    for(int i=0; i<size; i++)
+        std::cout << arr[i] << " ";
+    std::cout << std::endl;
+}

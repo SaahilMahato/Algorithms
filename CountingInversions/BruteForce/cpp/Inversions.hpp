@@ -1,40 +1,23 @@
 #include <iostream>
 
-class Inversions
-{
-    private:
-        int *arr;
-        int size;
+void input(int* arr, int size) {
+    std::cout << "Enter the array: " << std::endl;
+    for(int i=0; i<size; i++)
+        std::cin >> arr[i];
+}
 
-    public:
-        Inversions(int N)
-        {
-            this->size = N;
-            this->arr = new int[this->size];
-        }
+int count(int* arr, int size) {
+    int count = 0;
+    for(int i=0; i<size-1; i++)
+        for(int j=i+1; j<size; j++)
+            if(arr[i] > arr[j])
+                count++;
+    return count;
+}
 
-        void input()
-        {
-            std::cout<< "Enter the array: "<< std::endl;
-            for(int i=0; i<this->size; i++)
-                std::cin>> this->arr[i];
-        }
-
-        int count()
-        {
-            int count = 0;
-            for(int i=0; i<this->size-1; i++)
-                for(int j=i+1; j<this->size; j++)
-                    if(this->arr[i] > this->arr[j])
-                        count++;
-            return count;
-        }
-
-        void printArray()
-        {
-            std::cout<< "The array is: ";
-            for(int i=0; i<this->size; i++)
-                std::cout<< this->arr[i]<< " ";
-            std::cout<<std::endl;
-        }
-};
+void printArray(int* arr, int size) {
+    std::cout << "The array is: ";
+    for(int i=0; i<size; i++)
+        std::cout << arr[i] << " ";
+    std::cout << std::endl;
+}

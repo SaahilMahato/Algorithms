@@ -1,44 +1,27 @@
-#include<iostream>
+#include <iostream>
 
-class SelectionSort
-{
-    private:
-        int *arr;
-        int size;
-    public:
-        SelectionSort(int N)
-        {
-            this->size = N;
-            this->arr = new int[size];
-        } 
+void input(int* arr, int size) {
+    std::cout << "Enter the array: " << std::endl;
+    for(int i=0; i<size; i++)
+        std::cin >> arr[i];
+}
 
-        void input()
-        {
-            std::cout<<"Enter the array: "<<std::endl;
-            for(int i=0; i<this->size; i++)
-                std::cin >> this->arr[i];
-        }
+void selectionSort(int* arr, int size) {
+    int min_index, temp;
+    for(int i=0; i<size-1; i++) {
+        min_index = i;
+        for(int j=i+1; j<size; j++)
+            if(arr[j] < arr[min_index])
+                min_index = j;
+        temp = arr[i];
+        arr[i] = arr[min_index];
+        arr[min_index] = temp;
+    }
+}
 
-        void sort()
-        {
-            int min_index, temp;
-            for(int i=0; i<this->size-1; i++)
-            {
-                min_index = i;
-                for(int j=i+1; j<this->size; j++)
-                    if(this->arr[j]<this->arr[min_index])
-                        min_index = j;
-                temp = this->arr[i];
-                this->arr[i] = this->arr[min_index];
-                this->arr[min_index] = temp;
-            }
-        }
-
-        void printArray()
-        {
-            std::cout<<"Array is: ";
-            for(int i=0; i<size; i++)
-                std::cout << this->arr[i] << " ";
-            std::cout<<std::endl;
-        }
-};
+void printArray(int* arr, int size) {
+    std::cout << "Array is: ";
+    for(int i=0; i<size; i++)
+        std::cout << arr[i] << " ";
+    std::cout << std::endl;
+}

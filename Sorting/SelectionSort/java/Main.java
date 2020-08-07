@@ -4,14 +4,13 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter the size of the array: ");
-        int N;
-        N = sc.nextInt();
-        SelectionSort s = new SelectionSort(N);
-        s.input();
+        int size = sc.nextInt();
+        int[] arr = new int[size];
+        SelectionSort.input(arr, size);
         sc.close();
-        s.printArray();
+        SelectionSort.printArray(arr, size);
         System.out.println("Sorting...");
-        s.sort();
-        s.printArray();
+        SelectionSort.selectionSort(arr, size);
+        SelectionSort.printArray(arr, size);
     }
 }

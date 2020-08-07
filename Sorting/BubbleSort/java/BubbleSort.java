@@ -1,32 +1,25 @@
 import java.util.Scanner;
 
 public class BubbleSort {
-    private int[] arr;
-    private int size;
 
-    public BubbleSort(int N) {
-        this.size = N;
-        this.arr = new int[this.size];
-    }
-
-    public void input() {
+    public static void input(int[] arr, int size) {
         System.out.println("Enter the array: ");
-        Scanner sc = new Scanner(System.in);
-        for(int i=0; i<this.size; i++)
-            this.arr[i] = sc.nextInt();
-        sc.close();
+        Scanner in = new Scanner(System.in);
+        for(int i=0; i<size; i++)
+            arr[i] = in.nextInt();
+        in.close();
     }
 
-    public void sort() {
+    public static void bubbleSort(int arr[], int size) {
         boolean flag;
         int temp;
-        for(int i=1; i<this.size; i++) {
+        for(int i=1; i<size; i++) {
             flag = true;
-            for(int j=0; j<this.size-i; j++) {
-                if(this.arr[j] > this.arr[j+1]) {
-                    temp = this.arr[j];
-                    this.arr[j] = this.arr[j+1];
-                    this.arr[j+1] = temp;
+            for(int j=0; j<size-i; j++) {
+                if(arr[j] > arr[j+1]) {
+                    temp = arr[j];
+                    arr[j] = arr[j+1];
+                    arr[j+1] = temp;
                     flag = false;
                 }
             }
@@ -34,10 +27,11 @@ public class BubbleSort {
         }
     }
 
-    public void printArray() {
+    public static void printArray(int[] arr, int size) {
         System.out.print("Array is: ");
-        for(int i=0; i<this.size; i++)
-            System.out.print(this.arr[i] + " ");
+        for(int i=0; i<size; i++)
+            System.out.print(arr[i] + " ");
         System.out.println();
     }
+
 }

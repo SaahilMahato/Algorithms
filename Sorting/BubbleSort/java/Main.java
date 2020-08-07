@@ -4,13 +4,13 @@ public class Main {
     public static void main(String[] args) {
         System.out.print("Enter the size of the array: ");
         Scanner sc = new Scanner(System.in);
-        int N = sc.nextInt();
-        BubbleSort s = new BubbleSort(N);
-        s.input();
+        int size = sc.nextInt();
+        int[] arr = new int[size];
+        BubbleSort.input(arr, size);
         sc.close();
-        s.printArray();
+        BubbleSort.printArray(arr, size);
         System.out.println("Sorting...");
-        s.sort();
-        s.printArray();
+        BubbleSort.bubbleSort(arr, size);
+        BubbleSort.printArray(arr, size);
     }
 }

@@ -4,13 +4,13 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter the size of the array: ");
-        int N = sc.nextInt();
-        MergeSort s = new MergeSort(N);
-        s.input();
+        int size = sc.nextInt();
+        int[] arr = new int[size];
+        MergeSort.input(arr, size);
         sc.close();
-        s.printArray();
+        MergeSort.printArray(arr, size);
         System.out.println("Sorting...");
-        s.sort();
-        s.printArray();
+        MergeSort.mergeSort(arr, 0, size-1);
+        MergeSort.printArray(arr, size);
     }    
 }

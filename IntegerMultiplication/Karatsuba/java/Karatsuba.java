@@ -2,8 +2,8 @@
 
 import java.lang.Math;
 
-class Karatsuba {
-    public long multiply(long x, long y) {
+public class Karatsuba {
+    public static long multiply(long x, long y) {
         if(x < 10 || y < 10) {
             return x * y;
         }
