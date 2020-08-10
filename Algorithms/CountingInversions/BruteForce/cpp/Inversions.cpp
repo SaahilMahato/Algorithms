@@ -9,4 +9,6 @@ int main() {
     printArray(arr, size);
     std::cout << "Number of inversions: " << count(arr, size) << std::endl;
     delete[] arr;
+
+    return 0;
 }

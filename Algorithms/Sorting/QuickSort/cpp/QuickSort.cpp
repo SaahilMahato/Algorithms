@@ -1,7 +1,6 @@
-#include "MergeSort.hpp"
+#include "QuickSort.hpp"
 
-int main()
-{
+int main() {
     std::cout<<"Enter the size of the array: ";
     int size;
     std::cin >> size;
@@ -9,7 +8,7 @@ int main()
     input(arr, size);
     printArray(arr, size);
     std::cout << "Sorting..." << std::endl;
-    mergeSort(arr, 0, size-1);
+    quickSort(arr, 0, size-1);
     printArray(arr, size);
     delete[] arr;
 

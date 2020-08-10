@@ -1,7 +1,6 @@
 #include "SelectionSort.hpp"
 
-int main()
-{
+int main() {
     std::cout<<"Enter the size of the array: ";
     int size;
     std::cin >> size; 

@@ -7,4 +7,6 @@ int main() {
     std::cout << "Enter y: ";
     std::cin >> y;
     std::cout << multiply(x, y) << std::endl;
+
+    return 0;
 }
