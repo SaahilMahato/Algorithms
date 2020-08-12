@@ -18,8 +18,8 @@ public class Main {
             c2 = sc.nextInt();
         }
 
-        A = Multiplication.initializeMatrix(r1, c1);
-        B = Multiplication.initializeMatrix(r2, c2);
+        A = new int[r1][c1];
+        B = new int[r2][c2];
 
         Multiplication.input(A, r1, c1);
         System.out.println("Matrix A: ");

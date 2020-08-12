@@ -2,11 +2,6 @@ import java.util.Scanner;
 
 public class Multiplication {
 
-    public static int[][] initializeMatrix(int r, int c) {
-        int[][] temp = new int[r][c];
-        return temp;
-    }
-
     public static void input(int[][] M, int r, int c) {
         System.out.println("Enter Matrix: ");
         Scanner in = new Scanner(System.in);
@@ -17,7 +12,7 @@ public class Multiplication {
     }
 
     public static int[][] multiply(int[][] M1, int[][] M2, int r1, int c1, int c2) {
-        int[][] temp = initializeMatrix(r1, c2);
+        int[][] temp = new int[r1][c2];
         for(int i=0; i<r1; i++)
             for(int j=0; j<c2; j++)
                 for(int k=0; k<c1; k++)

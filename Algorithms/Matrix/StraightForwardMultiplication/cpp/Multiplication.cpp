@@ -16,8 +16,8 @@ int main() {
         std::cin >> c2;
     }
 
-    A = initialize_matrix(r1, c1);
-    B = initialize_matrix(r2, c2);
+    A = initializeMatrix(r1, c1);
+    B = initializeMatrix(r2, c2);
 
     input(A, r1, c1);
     std::cout << "Matrix A: " << std::endl;

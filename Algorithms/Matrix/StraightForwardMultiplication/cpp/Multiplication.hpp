@@ -1,6 +1,6 @@
 #include <iostream>
 
-int** initialize_matrix(int r, int c) {
+int** initializeMatrix(int r, int c) {
     int** temp = new int*[r];
     for(int i=0; i<r; i++)
         temp[i] = new int[c];
@@ -22,7 +22,7 @@ void input(int** M, int r, int c) {
 }
 
 int** multiply(int** M1, int** M2, int r1, int c1, int c2) {
-    int** temp = initialize_matrix(r1, c2);
+    int** temp = initializeMatrix(r1, c2);
     set_to_zero(temp, r1, c2);
     for(int i=0; i<r1; i++)
         for(int j=0; j<c2; j++)

@@ -17,6 +17,6 @@
 
 ### Matrix Multiplication Algorithms
 1. Straight Forward Matrix Multiplication
-
+1. Strassen's Matrix Multiplication
 
 ## Data Structures
