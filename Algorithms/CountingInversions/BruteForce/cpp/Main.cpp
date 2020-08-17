@@ -7,6 +7,7 @@ int main() {
     int* arr = new int[size];
     input(arr, size);
     printArray(arr, size);
+    std::cout << "Counting..." << std::endl;
     std::cout << "Number of inversions: " << count(arr, size) << std::endl;
     delete[] arr;
 

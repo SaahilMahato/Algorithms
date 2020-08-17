@@ -1,7 +1,9 @@
 #include "Strassen.hpp"
 
 int main() {
-    std::cout << "Strassen's Matrix Multiplication Algorithm\nonly works on square matrices whose dimension is a power of 2.\nSo, please enter a valid dimension(size) of matrix." << std::endl;
+    std::cout << "Strassen's Matrix Multiplication Algorithm\n" <<
+    "only works on square matrices whose dimension is a power of 2.\n" <<
+    "So, please enter a valid dimension(size) of matrix." << std::endl;
     std::cout << "Enter size of the matrix: ";
     int n;
     std::cin >> n;

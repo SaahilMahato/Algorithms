@@ -10,4 +10,5 @@ def count(arr):
 if __name__ == '__main__':
     arr = list(map(int, input('Enter the array: ').split()))
     print('The array is: ' + ' '.join([str(i) for i in arr]))
+    print("Counting...")
     print("Number of inversions:", count(arr))

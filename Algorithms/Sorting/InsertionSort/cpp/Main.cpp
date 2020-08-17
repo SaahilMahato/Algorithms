@@ -7,7 +7,7 @@ int main() {
     int* arr = new int[size];
     input(arr, size);
     printArray(arr, size);
-    std::cout<<"Sorting..."<<std::endl;
+    std::cout << "Sorting..." << std::endl;
     insertionSort(arr, size);
     printArray(arr, size);
     delete[] arr;

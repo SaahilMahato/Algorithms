@@ -3,7 +3,9 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
-    System.out.println("Strassen's Matrix Multiplication Algorithm\nonly works on square matrices whose dimension is a power of 2.\nSo, please enter a valid dimension(size) of matrix.");
+    System.out.println("Strassen's Matrix Multiplication Algorithm\n"+
+    "only works on square matrices whose dimension is a power of 2.\n"+
+    "So, please enter a valid dimension(size) of matrix.");
     System.out.print("Enter size of the matrix: ");
     Scanner sc = new Scanner(System.in);
     int n = sc.nextInt();
