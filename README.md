@@ -22,7 +22,7 @@ correct output. So, change the datatypes as you see fit before using it.
 2. Divide and Conquer Approach
 
 ### Matrix Multiplication Algorithms
-1. Straight Forward Matrix Multiplication
+1. Straight Forward (Naive) Matrix Multiplication
 1. Strassen's Matrix Multiplication
 
 ## Data Structures

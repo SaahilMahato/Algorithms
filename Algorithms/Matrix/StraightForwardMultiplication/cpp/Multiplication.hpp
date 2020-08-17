@@ -7,7 +7,7 @@ int** initializeMatrix(int r, int c) {
     return temp;
 }
 
-void set_to_zero(int** M, int r, int c) {
+void setToZero(int** M, int r, int c) {
     for(int i=0; i<r; i++)
         for(int j=0; j<c; j++)
             M[i][j] = 0;
@@ -23,7 +23,7 @@ void input(int** M, int r, int c) {
 
 int** multiply(int** M1, int** M2, int r1, int c1, int c2) {
     int** temp = initializeMatrix(r1, c2);
-    set_to_zero(temp, r1, c2);
+    setToZero(temp, r1, c2);
     for(int i=0; i<r1; i++)
         for(int j=0; j<c2; j++)
             for(int k=0; k<c1; k++)
