@@ -17,6 +17,10 @@ correct output. So, change the datatypes as you see fit before using it.
 ### Integer Multiplication Algorithms
 1. Karatsuba Multiplication
 
+### Mathematics
+1. Factorial
+2. Sum of n natural numbers
+
 ### Counting Inversions
 1. Brute Force Approach
 2. Divide and Conquer Approach
