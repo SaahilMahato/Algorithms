@@ -50,25 +50,81 @@ int** strassenMultiply(int** A, int** B, int n) {
             C[k+i][j] = C21[i][j];
             C[k+i][k+j] = C22[i][j];
         }
-    
+
+    for(int i=0; i<k; i++)
+        delete[] A11[i];
     delete[] A11;
+
+    for(int i=0; i<k; i++)
+        delete[] A12[i];
     delete[] A12;
+
+    for(int i=0; i<k; i++)
+        delete[] A21[i];
     delete[] A21;
+
+    for(int i=0; i<k; i++)
+        delete[] A22[i];
     delete[] A22;
+
+    for(int i=0; i<k; i++)
+        delete[] B11[i];
     delete[] B11;
+
+    for(int i=0; i<k; i++)
+        delete[] B12[i];
     delete[] B12;
+
+    for(int i=0; i<k; i++)
+        delete[] B21[i];
     delete[] B21;
+
+    for(int i=0; i<k; i++)
+        delete[] B22[i];
     delete[] B22;
+
+    for(int i=0; i<k; i++)
+        delete[] P1[i];
     delete[] P1;
+
+    for(int i=0; i<k; i++)
+        delete[] P2[i];
     delete[] P2;
+
+    for(int i=0; i<k; i++)
+        delete[] P3[i];
     delete[] P3;
+
+    for(int i=0; i<k; i++)
+        delete[] P4[i];
     delete[] P4;
+
+    for(int i=0; i<k; i++)
+        delete[] P5[i];
     delete[] P5;
+
+    for(int i=0; i<k; i++)
+        delete[] P6[i];
     delete[] P6;
+
+    for(int i=0; i<k; i++)
+        delete[] P7[i];
     delete[] P7;
+
+    for(int i=0; i<k; i++)
+        delete[] C11[i];
     delete[] C11;
+
+    for(int i=0; i<k; i++)
+        delete[] C12[i];
     delete[] C12;
+
+    for(int i=0; i<k; i++)
+        delete[] C21[i];
     delete[] C21;
+
+    for(int i=0; i<k; i++)
+        delete[] C22[i];
     delete[] C22;
 
     return C;

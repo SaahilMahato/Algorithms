@@ -20,6 +20,7 @@ correct output. So, change the datatypes as you see fit before using it.
 ### Mathematics
 1. Factorial
 2. Sum of n natural numbers
+3. Power
 
 ### Counting Inversions
 1. Brute Force Approach

@@ -22,8 +22,16 @@ int main() {
     std::cout << "Multipliction result:" << std::endl;
     printMatrix(C, n);
 
+    for(int i=0; i<n; i++)
+        delete[] A[i];
     delete[] A;
+
+    for(int i=0; i<n; i++)
+        delete[] B[i];
     delete[] B;
+
+    for(int i=0; i<n; i++)
+        delete[] C[i];
     delete[] C;
 
     return 0;
