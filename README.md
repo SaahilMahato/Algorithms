@@ -1,9 +1,7 @@
 # Implementations of Algorithms and Data Structures in C++, Java and Python
 
 **Disclaimer:**
-Most of the programs use integer datatype for inputs and outputs so if your input or
-expected output is outside of the integer datatype range the program will not return
-correct output. So, change the datatypes as you see fit before using it.
+I have not used generic programming so there's a chance of overflow or underflow in large or small inputs so change the data type as you see fit before executing.
 
 ## Algorithms
 
