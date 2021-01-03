@@ -29,3 +29,6 @@ I have not used generic programming so there's a chance of overflow or underflow
 1. Strassen's Matrix Multiplication
 
 ## Data Structures
+
+### Stack
+1. Stack Array Implementation
