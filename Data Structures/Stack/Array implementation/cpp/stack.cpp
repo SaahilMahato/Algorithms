@@ -14,18 +14,13 @@ Stack::~Stack()
 
 void Stack::push(int data)
 {
-    if (this->top_pointer < this->size-1)
-    {
-        this->top_pointer += 1;
-        this->stack[this->top_pointer] = data;
-    }
-    else
-        std::cout << "Stack is full" <<  std::endl;
+    this->top_pointer++;
+    this->stack[this->top_pointer] = data;
 }
 
 int Stack::pop()
 {
-    this->top_pointer -= 1;
+    this->top_pointer--;
     return this->stack[this->top_pointer+1];
 }
 

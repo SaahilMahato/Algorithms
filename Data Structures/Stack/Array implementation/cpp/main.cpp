@@ -1,4 +1,5 @@
 #include "stack.hpp"
+#include <iostream>
 
 int main()
 {
@@ -68,7 +69,7 @@ int main()
                 break;
 
             default:
-                std::cout << "Please enter a valid input." << std::endl;
+                std::cout << "Please enter a valid input" << std::endl;
         }
     }
     
