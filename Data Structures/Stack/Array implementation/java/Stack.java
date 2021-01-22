@@ -11,26 +11,37 @@ public class Stack {
         this.stack = new int[this.size];
     }
 
-    public void push(int data) {
-        this.top_pointer++;
-        this.stack[this.top_pointer] = data;
-    }
-
-    public int pop() {
-        this.top_pointer--;
-        return this.stack[this.top_pointer+1];
-    }
-
-    public int top() {
-        return this.stack[this.top_pointer];
-    }
-
     public boolean isEmpty() {
         return this.top_pointer == -1;
     }
 
     public boolean isFull() {
         return this.top_pointer == this.size-1;
+    }
+
+    public void push(int data) {
+        if (!isFull())
+            this.stack[++top_pointer] = data;
+        else
+            System.out.println("Stack overflow");
+    }
+
+    public int pop() {
+        if (!isEmpty())
+            return this.stack[this.top_pointer--];
+        else {
+            System.out.println("Stack underflow");
+            return 0;
+        }
+    }
+
+    public int top() {
+        if (!isEmpty()) 
+            return this.stack[this.top_pointer];
+        else {
+            System.out.println("Error: Stack is empty");
+            return 0;
+        }
     }
 
     public static void main(String[] args) {
@@ -56,41 +67,25 @@ public class Stack {
 
             switch (option) {
                 case 1:
-                    if (my_stack.isFull())
-                        System.out.println("Error: Stack is full. Can't push to stack");
-                    else {
-                        System.out.print("Enter data to push to stack: ");
-                        push_data = sc.nextInt();
-                        my_stack.push(push_data);
-                    }
+                    System.out.print("Enter data to push to stack: ");
+                    push_data = sc.nextInt();
+                    my_stack.push(push_data);
                     break;
 
                 case 2:
-                    if (my_stack.isEmpty())
-                        System.out.println("Error: Stack is empty. Can't pop from stack");
-                    else 
-                        System.out.println(my_stack.pop() + " popped from stack");
+                    System.out.println(my_stack.pop());
                     break;
                 
                 case 3:
-                    if (my_stack.isEmpty())
-                        System.out.println("Error: Stack is empty. Can't get top of stack");
-                    else 
-                        System.out.println("The top of stack is: " + my_stack.top());
+                    System.out.println(my_stack.top());
                     break;
 
                 case 4:
-                    if (my_stack.isEmpty())
-                        System.out.println("Stack is empty");
-                    else 
-                        System.out.println("Stack is not empty");
+                    System.out.println(my_stack.isEmpty());
                     break;
 
                 case 5:
-                    if (my_stack.isFull())
-                        System.out.println("Stack is full");
-                    else 
-                        System.out.println("Stack is not full");
+                    System.out.println(my_stack.isFull());
                     break;
 
                 case -1:

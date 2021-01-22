@@ -4,24 +4,34 @@ class Stack:
         self.stack = [None] * self.size
         self.top_pointer = -1
 
-    def push(self, data):
-        self.top_pointer += 1
-        self.stack[self.top_pointer] = data
-
-    def pop(self):
-        self.top_pointer -= 1
-        return self.stack[self.top_pointer+1]
-
-    def top(self):
-        return self.stack[self.top_pointer]
-
     def isEmpty(self):
         return self.top_pointer == -1
 
     def isFull(self):
         return self.top_pointer == self.size-1
 
+    def push(self, data):
+        if not self.isFull():
+            self.top_pointer += 1
+            self.stack[self.top_pointer] = data
+        else:
+            print("Stack overflow")
 
+    def pop(self):
+        if not self.isEmpty():
+            temp = self.stack[self.top_pointer]
+            self.top_pointer -= 1
+            return temp
+        else:
+            print("Stack underflow")
+
+    def top(self):
+        if not self.isEmpty():
+            return self.stack[self.top_pointer]
+        else:
+            print("Error: Stack is empty")
+
+    
 if __name__ == '__main__':
     size = int(input('Enter the size of stack: '))
     my_stack = Stack(size)
@@ -40,35 +50,20 @@ if __name__ == '__main__':
         option = int(input('Enter your option: '))
 
         if option == 1:
-            if my_stack.isFull():
-                print("Error: Stack is full. Can't push to stack")
-            else:
-                push_data = int(input("Enter data to push to stack: "))
-                my_stack.push(push_data)
+            push_data = int(input("Enter data to push to stack: "))
+            my_stack.push(push_data)
 
         elif option == 2:
-            if my_stack.isEmpty():
-                print("Error: Stack is empty. Can't pop from stack")
-            else:
-                print(my_stack.pop(), "popped from stack")
+                print(my_stack.pop())
 
         elif option == 3:
-            if my_stack.isEmpty():
-                print("Error: Stack is empty. Can't get top of stack")
-            else:
-                print("The top of stack is:", my_stack.top())
+            print(my_stack.top())
 
         elif option == 4:
-            if my_stack.isEmpty():
-                print("Stack is empty")
-            else:
-                print("Stack is not empty")
+            print(my_stack.isEmpty())
 
         elif option == 5:
-            if my_stack.isFull():
-                print("Stack is full")
-            else:
-                print("Stack is not full")
+            print(my_stack.isFull())
 
         elif option == -1:
             print("Program ended")

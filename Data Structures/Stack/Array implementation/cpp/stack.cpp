@@ -28,18 +28,16 @@ void Stack::push(int data)
     if (!isFull())
         this->stack[++this->top_pointer] = data;
     else
-        std::cout << "Stack Overflow" << std::endl;  
+        std::cout << "Stack overflow" << std::endl;  
 }
 
 int Stack::pop()
 {
-    if(!isEmpty())
-    {
+    if (!isEmpty())
         return this->stack[this->top_pointer--];
-    }
     else
     {
-        std::cout << "Stack Underflow" << std::endl;
+        std::cout << "Stack underflow" << std::endl;
         return 0;
     }  
 }
@@ -95,19 +93,13 @@ int main()
                 break;
 
             case 4:
-                if (my_stack.isEmpty())
-                    std::cout << "Stack is empty" << std::endl;
-                else
-                    std::cout << "Stack is not empty" << std::endl;
+                std::cout << my_stack.isEmpty() << std::endl;
                 break;
 
             case 5:
-                if (my_stack.isFull())
-                    std::cout << "Stack is full" << std::endl;
-                else
-                    std::cout << "Stack is not full" << std::endl;
+                std::cout << my_stack.isFull() << std::endl;
                 break;
-
+                
             case -1:
                 std::cout << "Program ended" << std::endl;
                 break;
