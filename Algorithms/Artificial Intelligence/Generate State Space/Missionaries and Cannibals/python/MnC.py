@@ -67,4 +67,4 @@ if __name__ == '__main__':
             temp_node = (node[0], node[1]+1, 1, node_id)
             place_in_tree(temp_node)
 
-tree.show()
+    tree.show()
