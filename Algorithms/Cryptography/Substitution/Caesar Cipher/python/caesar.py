@@ -21,7 +21,9 @@ def decrypt(cipher_text):
 
 if __name__ == '__main__':
     plain_text = input("Enter the plain text: ") # Input only capital letters
-    print("Cipher text:", encrypt(plain_text))
+    print("Encrypting...")
+    cipher_text = encrypt(plain_text)
+    print("Cipher text:", cipher_text)
 
-    cipher_text = input("Enter the cipher text: ")
+    print("Decrypting...")
     print("Plain text:", decrypt(cipher_text))

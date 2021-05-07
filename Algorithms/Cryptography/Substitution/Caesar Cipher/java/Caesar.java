@@ -31,10 +31,10 @@ public class Caesar {
 
         System.out.print("Enter the plain text: ");
         String plain_text = sc.nextLine(); // Input only capital letters
-        System.out.println("Cipher text: " + encrypt(plain_text));
+        String cipher_text = encrypt(plain_text);
+        System.out.println("Cipher text: " + cipher_text);
 
-        System.out.print("Enter the cipher text: ");
-        String cipher_text = sc.nextLine(); // Input only capital letters
+        System.out.println("Decrypting...");
         System.out.println("Plain text: " + decrypt(cipher_text));
 
         sc.close();

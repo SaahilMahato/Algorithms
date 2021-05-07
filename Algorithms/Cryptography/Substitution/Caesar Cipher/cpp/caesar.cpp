@@ -33,10 +33,10 @@ int main()
     std::string plain_text;
     std::cout << "Enter the plain text: ";
     std::getline(std::cin, plain_text); // Input only capital letters
-    std::cout << "Cipher text: " << encrypt(plain_text) << std::endl;
+    std::cout << "Encrypting..." << std::endl;
+    std::string cipher_text = encrypt(plain_text);
+    std::cout << "Cipher text: " << cipher_text << std::endl;
 
-    std::string cipher_text;
-    std::cout << "Enter the cipher text: ";
-    std::getline(std::cin, cipher_text);
+    std::cout << "Decrypting..." << std::endl;
     std::cout << "Plain text: " << decrypt(cipher_text) << std::endl;
 }
